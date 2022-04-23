@@ -3,15 +3,11 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 // // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
-import firebase from "firebase/compat/app";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
     apiKey: "AIzaSyCc6SqVVwGMvDlLFDRCBIK5sSglJgc1_ew",
     authDomain: "chat-react-2af08.firebaseapp.com",
@@ -23,12 +19,9 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 
-console.log(analytics);
-
-const auth = getAuth()
-const firestore = getFirestore();
+const auth = getAuth(app)
+const firestore = getFirestore(app);
 
 export const Context = createContext(null);
 
@@ -36,7 +29,6 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 
     <Context.Provider value={{
-        firebase,
         auth,
         firestore
     }}>
