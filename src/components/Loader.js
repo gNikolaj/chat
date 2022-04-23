@@ -11,14 +11,14 @@ const Loader = () => {
             >
                 <Grid  container alignItems={'center'} direction={'column'}>
                     <div className="lds-roller">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
+                        <div/>
+                        <div/>
+                        <div/>
+                        <div/>
+                        <div/>
+                        <div/>
+                        <div/>
+                        <div/>
                     </div>
                 </Grid>
             </Grid>
