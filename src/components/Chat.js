@@ -23,6 +23,8 @@ const Chat = () => {
         setValue('');
     }
 
+    // {document.querySelector('.chat-content').scrollTop = document.querySelector('.chat-content').scrollHeight}
+
     if (loading) {
         return <Loader/>
     }
@@ -30,14 +32,14 @@ const Chat = () => {
     return (
         <Container>
             <Grid container justifyContent={'center'} style={{height: window.innerHeight - 50, marginTop: '20px'}}>
-                <div style={{width: '80%', height: '70vh', border: '1px solid gray', overflowY: 'auto'}}>
+                <div className='chat-content'>
                     {messages.map(message =>
-                        <div style={{margin: '10px', marginLeft: user.uid === message.uid ? 'auto' : '10px', width: 'fit-content'}}>
-                            <Grid container >
+                        <div className='message-content' style={{marginLeft: user.uid === message.uid ? 'auto' : '10px'}}>
+                            <Grid container className='grid-name-image'>
                                 <Avatar src={message.photoURL}/>
                                 <div>{message.displayName}</div>
                             </Grid>
-                            <div>{message.text}</div>
+                            <div className='message-text'>{message.text}</div>
                         </div>
                     )}
                 </div>
